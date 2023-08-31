@@ -4,13 +4,19 @@ import './header.css';
 import './content.css';
 import './article.css';
 
+
 const App =()=> {
   const [photos,setPhotos]=useState([])
   const open=url=> window.open(url)
   console.log({photos})
 
   return (
-   <div>
+   <div className='global'>
+
+    <div className='preheader'>
+      <div> Buscador de imágenes con React </div>
+
+    </div>
    <header>
     
     <Formik
@@ -45,21 +51,13 @@ const App =()=> {
 
       <div className='container'>
         <div className='center'>
-
           {photos.map (photo=>
           <article key={photo.id} onClick={()=> open(photo.links.html)}>
             <img src={photo.urls.regular} />
             <p> {[photo.description, photo.alt_descriptiorn].join (' - ')}</p>
           </article>
-
-
           )}
-
-
-
         </div>
-
-
       </div>
    </div> 
   )
