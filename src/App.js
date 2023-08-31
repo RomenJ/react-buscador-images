@@ -3,7 +3,8 @@ import {useState} from 'react'
 import './header.css';
 import './content.css';
 import './article.css';
-
+import logo from './logo.svg';
+import './App.css';
 
 const App =()=> {
   const [photos,setPhotos]=useState([])
@@ -14,9 +15,18 @@ const App =()=> {
    <div className='global'>
 
     <div className='preheader'>
-      <div> Buscador de imágenes con React </div>
+      <div> Buscador de imágenes con React    
+      </div>
+
 
     </div>
+    <div className='preheader'>
+      
+<div>  <img src={logo} className="App-logo" alt="logo" />   
+      </div>
+
+    </div>
+
    <header>
     
     <Formik
